@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://blrx70bbfjnqq"]
+
+[ext_resource type="Texture2D" uid="uid://buwwjo5k6rf6p" path="res://star.svg" id="1_33io5"]
+[ext_resource type="Script" path="res://animation_orb.gd" id="1_par60"]
+
+[node name="Node2D" type="Control"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_par60")
+
+[node name="Star" type="Sprite2D" parent="."]
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("1_33io5")

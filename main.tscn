@@ -1,0 +1,257 @@
+[gd_scene load_steps=6 format=3 uid="uid://b451sw5arka0g"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_42817"]
+[ext_resource type="Script" path="res://thread_container.gd" id="1_vy3g0"]
+[ext_resource type="FontFile" uid="uid://diqb0la5qdtr5" path="res://fonts/JetBrainsMono/JetBrainsMonoNerdFontMono-Regular.ttf" id="3_uaqnb"]
+[ext_resource type="Script" path="res://status_container.gd" id="5_cqeh7"]
+
+[sub_resource type="Theme" id="Theme_p3r0v"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_42817")
+
+[node name="ThreadContainerPlayer" type="PanelContainer" parent="."]
+layout_mode = 2
+offset_left = 16.0
+offset_top = 32.0
+offset_right = 272.0
+offset_bottom = 632.0
+tooltip_text = "Player Thread"
+theme = SubResource("Theme_p3r0v")
+script = ExtResource("1_vy3g0")
+
+[node name="MarginContainer" type="MarginContainer" parent="ThreadContainerPlayer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ThreadContainerPlayer/MarginContainer"]
+layout_mode = 2
+
+[node name="StatusContainerPlayer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 32.0
+offset_right = 536.0
+offset_bottom = 632.0
+tooltip_text = "Player Status"
+theme = SubResource("Theme_p3r0v")
+script = ExtResource("5_cqeh7")
+
+[node name="MarginContainer" type="MarginContainer" parent="StatusContainerPlayer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StatusContainerPlayer/MarginContainer"]
+layout_mode = 2
+
+[node name="Header" type="RichTextLabel" parent="StatusContainerPlayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Player Status"
+fit_content = true
+
+[node name="hp" type="RichTextLabel" parent="StatusContainerPlayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_uaqnb")
+bbcode_enabled = true
+text = "<stats>"
+fit_content = true
+
+[node name="strength" type="RichTextLabel" parent="StatusContainerPlayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_uaqnb")
+bbcode_enabled = true
+text = "<stats>"
+fit_content = true
+
+[node name="mana" type="RichTextLabel" parent="StatusContainerPlayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_uaqnb")
+bbcode_enabled = true
+text = "<stats>"
+fit_content = true
+
+[node name="sleep" type="RichTextLabel" parent="StatusContainerPlayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_uaqnb")
+bbcode_enabled = true
+text = "<stats>"
+fit_content = true
+
+[node name="StatusContainerEnemy" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 616.0
+offset_top = 32.0
+offset_right = 872.0
+offset_bottom = 632.0
+tooltip_text = "Enemy Status"
+theme = SubResource("Theme_p3r0v")
+script = ExtResource("5_cqeh7")
+
+[node name="MarginContainer" type="MarginContainer" parent="StatusContainerEnemy"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StatusContainerEnemy/MarginContainer"]
+layout_mode = 2
+
+[node name="Header" type="RichTextLabel" parent="StatusContainerEnemy/MarginContainer/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Enemy Status"
+fit_content = true
+
+[node name="hp" type="RichTextLabel" parent="StatusContainerEnemy/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_uaqnb")
+bbcode_enabled = true
+text = "<stats>"
+fit_content = true
+
+[node name="strength" type="RichTextLabel" parent="StatusContainerEnemy/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_uaqnb")
+bbcode_enabled = true
+text = "<stats>"
+fit_content = true
+
+[node name="mana" type="RichTextLabel" parent="StatusContainerEnemy/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_uaqnb")
+bbcode_enabled = true
+text = "<stats>"
+fit_content = true
+
+[node name="sleep" type="RichTextLabel" parent="StatusContainerEnemy/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_uaqnb")
+bbcode_enabled = true
+text = "<stats>"
+fit_content = true
+
+[node name="ThreadContainerEnemy" type="PanelContainer" parent="."]
+layout_mode = 2
+offset_left = 880.0
+offset_top = 32.0
+offset_right = 1136.0
+offset_bottom = 632.0
+tooltip_text = "Enemy Thread"
+theme = SubResource("Theme_p3r0v")
+script = ExtResource("1_vy3g0")
+
+[node name="MarginContainer" type="MarginContainer" parent="ThreadContainerEnemy"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ThreadContainerEnemy/MarginContainer"]
+layout_mode = 2
+
+[node name="InventoryContainer" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 616.0
+offset_top = 32.0
+offset_right = 872.0
+offset_bottom = 632.0
+tooltip_text = "Inventory"
+theme = SubResource("Theme_p3r0v")
+script = ExtResource("1_vy3g0")
+
+[node name="MarginContainer" type="MarginContainer" parent="InventoryContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InventoryContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="LootContainer" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 880.0
+offset_top = 32.0
+offset_right = 1136.0
+offset_bottom = 632.0
+tooltip_text = "Loot"
+theme = SubResource("Theme_p3r0v")
+script = ExtResource("1_vy3g0")
+
+[node name="MarginContainer" type="MarginContainer" parent="LootContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LootContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="ProgramPointerPlayer" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_right = 46.0
+offset_bottom = 40.0
+bbcode_enabled = true
+text = "→"
+
+[node name="ProgramPointerEnemy" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 1132.0
+offset_top = -2.0
+offset_right = 1172.0
+offset_bottom = 38.0
+bbcode_enabled = true
+text = "←"
+
+[node name="ButtonStart" type="Button" parent="."]
+layout_mode = 0
+offset_left = 552.0
+offset_top = 32.0
+offset_right = 598.0
+offset_bottom = 63.0
+text = "Start"
+
+[node name="ButtonEnemy" type="Button" parent="."]
+layout_mode = 0
+offset_left = 544.0
+offset_top = 68.0
+offset_right = 605.0
+offset_bottom = 99.0
+text = "Enemy"
+
+[node name="ButtonInventory" type="Button" parent="."]
+layout_mode = 0
+offset_left = 535.0
+offset_top = 103.0
+offset_right = 618.0
+offset_bottom = 134.0
+text = "Inventory"
+
+[node name="ThreadSizeLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 598.0
+offset_right = 257.0
+offset_bottom = 621.0
+theme_override_fonts/font = ExtResource("3_uaqnb")
+text = "1 / 8"
